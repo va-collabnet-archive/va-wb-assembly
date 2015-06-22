@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.ihtsdo</groupId>
+		<artifactId>ihtsdo-wb-parent</artifactId>
+		<version>1</version>
+	</parent>
+	<groupId>gov.va.wb</groupId>
+	<artifactId>va-wb-assembly</artifactId>
+	<version>4.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<inceptionYear>2013</inceptionYear>
+
+	<name>VA Terminology Workbench :: PA</name>
+	<description>VA Terminology Workbench Project Assembly</description>
+	<!--scm>
+		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/trunk</connection>
+		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/trunk</developerConnection>
+		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-jif-wb-assembly/trunk/?root=va-jif-wb-bundle&amp;system=exsy1002</url>
+	</scm-->
+	<properties>
+		<!-- Used to reference archetype which created this project. -->
+		<archetypeGroupId>org.ihtsdo.wb.intl</archetypeGroupId>
+		<archetypeArtifactId>snomed-project-assembly-archetype</archetypeArtifactId>
+		<archetypeVersion>1.6-plus-patches</archetypeVersion>
+		
+		<!-- Installer naming properties -->
+		<editingFor>VA</editingFor>
+		<bundle-type>Production</bundle-type>
+		<target>VA</target>
+		<previousReleaseEffectiveTime />
+		<releaseName>{project.name}</releaseName>
+		<!-- NO SPACES in this variable - it breaks install4j!!! -->
+		<installerName>IHTSDO-${target}-Version_4.0_Production-editor</installerName>
+
+		<!-- per project customization -->
+		<isVaProject>false</isVaProject>
+		<aboutBoxReleaseEdition>VA Edition</aboutBoxReleaseEdition>
+		<aboutBoxReleaseVersion>Version 4.0 - Trunk</aboutBoxReleaseVersion>
+		<!-- 
+		<aboutBoxReleaseVersion>Version 4.0 - UAT Testing</aboutBoxReleaseVersion>
+		<aboutBoxReleaseVersion>Version 4.0 - Production</aboutBoxReleaseVersion>
+		-->
+
+		<appName>VA Terminology Workbench</appName>
+		<projectName>VA Terminology Workbench</projectName>
+		<baselineDataGroup>gov.va.wb</baselineDataGroup>
+		<baselineDataArtifactId>va-wb-baseline</baselineDataArtifactId>
+		<baselineDataVersion>4.0-SNAPSHOT</baselineDataVersion>
+		<baselineDataClassifier>db</baselineDataClassifier>
+		<userDataGroup>gov.va.wb</userDataGroup>
+		<userDataArtifactId>va-wb-users</userDataArtifactId>
+		<userDataVersion>4.0-SNAPSHOT</userDataVersion>
+		<qaRulesGroup>org.ihtsdo.qa</qaRulesGroup>
+		<qaRulesArtifactId>ihtsdo-base-rules-package</qaRulesArtifactId>
+		<qaRulesVersion>0.0.16</qaRulesVersion>
+		<qaRulesURL>http://mgr.servers.aceworkspace.net:50002/drools-guvnor550-final/org.drools.guvnor.Guvnor/package/ihtsdoBaseRules/ihtsdoBaseRules</qaRulesURL>
+		<qaRulesExtensionGroup>org.ihtsdo.qa</qaRulesExtensionGroup>
+		<qaRulesExtensionArtifactId>ihtsdo-ie-rules-package</qaRulesExtensionArtifactId>
+		<qaRulesExtensionVersion>0.0.11</qaRulesExtensionVersion>
+		<qaRulesExtensionURL>http://mgr.servers.aceworkspace.net:50002/drools-guvnor550-final/org.drools.guvnor.Guvnor/package/ihtsdoIntEditionRules/ihtsdoIntEditionRules</qaRulesExtensionURL>
+		<publicationEffectiveDate>2014.01.31 00:00:00</publicationEffectiveDate>
+		<projectRulesGroup>gov.va.wb</projectRulesGroup>
+		<projectRulesArtifactId>va-wb-rules</projectRulesArtifactId>
+		<projectRulesVersion>4.0-SNAPSHOT</projectRulesVersion>
+		<collabnetProjectName>interagency_program_office</collabnetProjectName>
+		<workflowResourcesGroup>gov.va.wb</workflowResourcesGroup>
+		<workflowResourcesArtifactId>va-wb-workflow</workflowResourcesArtifactId>
+		<workflowResourcesVersion>4.0-SNAPSHOT</workflowResourcesVersion>
+		<siteDeployUrl>svn:https://TODO-siteDeploy</siteDeployUrl>
+		<!-- <siteDeployUrl>svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.2-prod-siteDeploy</siteDeployUrl> -->
+
+		<!-- release file parameters -->
+		<projectIdNamespace>1000161</projectIdNamespace>
+		<previousReleaseDate>bot</previousReleaseDate>
+		<snomedCoreReleaseDate>2014.07.31 00:00:00</snomedCoreReleaseDate>
+		<!-- Namespaces are 7 digits, numeric -->
+		<projectModuleUUID>fd8fe531-eda8-576f-b75b-79735529798e</projectModuleUUID> <!-- Type5UuidFactory.get(Type5UuidFactory.PATH_ID_FROM_FS_DESC, "FSN") -->
+		<projectModuleFsn>VA maintained module (core metadata concept)</projectModuleFsn>
+		<projectModulePrefName>VA maintained module</projectModulePrefName>
+		<!-- Need to create in demo project database on initialize -->
+		<projectCountryCode>US</projectCountryCode>
+		<projectLangCode>EN</projectLangCode>
+		<makeIdMappingFiles>true</makeIdMappingFiles>
+		<refsetParentFsn>SNOMED CT Refsets</refsetParentFsn> <!-- fsn of parent concept for refsets to release-->
+		<refsetParentUuid>7e2c0517-6181-5ba4-8626-845bc0605521</refsetParentUuid><!-- uuid of parent concept for refsets to release-->
+		<taxonomyParentFsn>SNOMED CT Concept</taxonomyParentFsn><!-- fsn of parent for terminolgoy to release-->
+		<taxonomyParentUuid>ee9ac5d2-a07c-3981-a57a-f7f26baf38d8</taxonomyParentUuid><!-- uuid of parent for terminolgoy to release-->
+		<!--EXAMPLE: NEED for DK, otherwise remove-->
+		<!--conceptNumberRefsetParentFsn>Danish pharmaceutical products reference sets</conceptNumberRefsetParentFsn>
+		<conceptNumberRefsetParentUuid>e929c29f-08a0-308d-8c33-e0ec83bb4f0a</conceptNumberRefsetParentUuid-->
+		
+		<!-- other standardized project properties -->
+		<projectDevelopmentOriginUUID>49087125-2c90-5bf8-8e6c-22a6ef6fab6f</projectDevelopmentOriginUUID>  <!-- Type5UuidFactory.get(Type5UuidFactory.PATH_ID_FROM_FS_DESC, "FSN") -->
+		<projectDevelopmentOriginFsn>JIF Terminology Workbench development origin</projectDevelopmentOriginFsn>
+		<projectDevelopmentOriginPrefName>JIF Terminology Workbench origin</projectDevelopmentOriginPrefName>
+		<projectDevelopmentPathUUID>944355c4-6eee-5fef-b8cc-fb0f500878ef</projectDevelopmentPathUUID> <!-- Type5UuidFactory.get(Type5UuidFactory.PATH_ID_FROM_FS_DESC, "FSN") -->
+		<projectDevelopmentPathFsn>JIF Terminology Workbench development path</projectDevelopmentPathFsn>
+		<projectDevelopmentPathPrefName>JIF Terminology Workbench development path</projectDevelopmentPathPrefName>
+		<projectDevelopmentViewPathFsn>${projectDevelopmentPathFsn}</projectDevelopmentViewPathFsn>
+		<projectReleaseCandidatePathUUID>54f51020-ad78-5218-b5af-0e85a747f2a1</projectReleaseCandidatePathUUID> <!-- Type5UuidFactory.get(Type5UuidFactory.PATH_ID_FROM_FS_DESC, "FSN") -->
+		<projectReleaseCandidatePathFsn>JIF Terminology Workbench release candidate path</projectReleaseCandidatePathFsn>
+		<projectReleaseCandidatePathPrefName>JIF Terminology Workbench release candidate</projectReleaseCandidatePathPrefName>
+		
+		<standaloneOnly>false</standaloneOnly>
+		<!-- must be uppercase TRUE or FALSE -->
+		<writeCommitRecord>TRUE</writeCommitRecord>
+
+		<!-- common project fields -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<collabnetUrl>https://csfe.aceworkspace.net/</collabnetUrl>
+
+		<!-- IHTSDO versions -->
+		<org.ihtsdo.user.docs>1.2</org.ihtsdo.user.docs>
+		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.30-SNAPSHOT</org.ihtsdo.wb-toolkit.version>
+		<org.ihtsdo.wb-icons.version>1.0.12</org.ihtsdo.wb-icons.version>
+		<org.ihtsdo.resources.version>1.7</org.ihtsdo.resources.version>
+		<org.ihtsdo.user.bp.version>1.34</org.ihtsdo.user.bp.version>
+		<org.ihtsdo.admin.bp.version>1.19</org.ihtsdo.admin.bp.version>
+		<org.ihtsdo.migration-wf-data>0.0.9</org.ihtsdo.migration-wf-data>
+		<org.ihtsdo.mrcm.specs.version>0.0.11</org.ihtsdo.mrcm.specs.version>
+		<!-- Apache versions -->
+		<org.apache.lucene.version>4.3.1</org.apache.lucene.version>
+		<org.apache.poi.version>3.6</org.apache.poi.version>
+		<org.apache.tika.version>0.7</org.apache.tika.version>
+		<org.apache.axis.version>1.4</org.apache.axis.version>
+		<org.mod4j.org.apache.commons.logging>1.0.4</org.mod4j.org.apache.commons.logging>
+		<!-- Drools version -->
+		<org.drools.version>5.5.0.Final</org.drools.version>
+		<jbpm.version>5.4.0.Final</jbpm.version>
+		<mvel2.version>2.1.3.Final</mvel2.version>
+		<!-- Miscellaneous -->
+		<org.dwfa.jini.version>2.1</org.dwfa.jini.version>
+		<org.fontbox.version>1.1.0</org.fontbox.version>
+		<pdfbox.version>1.1.0</pdfbox.version>
+		<commons.codec.version>1.4</commons.codec.version>
+		<jgraphx.examples.version>1.7.0.7-fixed</jgraphx.examples.version>
+		<javax.xml.version>1.1</javax.xml.version>
+		<commons.discovery.version>0.4</commons.discovery.version>
+	</properties>
+	
+	<distributionManagement>
+		<site>
+			<id>qa-reports-site-prod</id>
+			<name>qa-reports-site-prod</name>
+			<url>${siteDeployUrl}</url>
+		</site>
+	</distributionManagement>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${userDataGroup}</groupId>
+				<artifactId>${userDataArtifactId}</artifactId>
+				<version>${userDataVersion}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpcore</artifactId>
+				<version>4.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-transport-local</artifactId>
+				<version>1.5.3</version>
+			</dependency>
+			<dependency>
+				<groupId>${baselineDataGroup}</groupId>
+				<artifactId>${baselineDataArtifactId}</artifactId>
+				<classifier>${baselineDataClassifier}</classifier>
+				<version>${baselineDataVersion}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>ihtsdo-resources</artifactId>
+				<version>${org.ihtsdo.resources.version}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>ihtsdo-user-docs</artifactId>
+				<version>${org.ihtsdo.user.docs}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>ihtsdo-resources</artifactId>
+				<version>${org.ihtsdo.resources.version}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo.sct</groupId>
+				<artifactId>migration-wf-data</artifactId>
+				<version>${org.ihtsdo.migration-wf-data}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo.sct</groupId>
+				<artifactId>mrcm-refset-specs</artifactId>
+				<type>zip</type>
+				<version>${org.ihtsdo.mrcm.specs.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>wb-ide-admin-bp</artifactId>
+				<version>${org.ihtsdo.admin.bp.version}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>wb-ide-user-bp</artifactId>
+				<version>${org.ihtsdo.user.bp.version}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>wb-icons</artifactId>
+				<version>${org.ihtsdo.wb-icons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>editor-standalone</artifactId>
+				<version>${project.version}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>profiles</artifactId>
+				<version>${project.version}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>queues</artifactId>
+				<version>${project.version}</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>${projectRulesGroup}</groupId>
+				<artifactId>${projectRulesArtifactId}</artifactId>
+				<type>zip</type>
+				<version>${projectRulesVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>wb-bdb</artifactId>
+				<version>${org.ihtsdo.wb-toolkit.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.collabnet</groupId>
+						<artifactId>sf_soap50_sdk</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>rule-engine-integration</artifactId>
+				<version>${org.ihtsdo.wb-toolkit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dwfa.jini</groupId>
+				<artifactId>start</artifactId>
+				<scope>compile</scope>
+				<version>${org.dwfa.jini.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>tk-arena-spec</artifactId>
+				<type>jar</type>
+				<version>${org.ihtsdo.wb-toolkit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dwfa.jini</groupId>
+				<artifactId>jsk-dl</artifactId>
+				<scope>compile</scope>
+				<version>${org.dwfa.jini.version}</version>
+			</dependency>
+			<dependency>
+				<!--A dependency required to use the jini/jehri dynamic provider security model-->
+				<groupId>org.dwfa.jini</groupId>
+				<artifactId>jsk-policy</artifactId>
+				<scope>provided</scope>
+				<version>${org.dwfa.jini.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>jgraphx</groupId>
+				<artifactId>jgraphx-examples</artifactId>
+				<version>${jgraphx.examples.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.xml</groupId>
+				<artifactId>jaxrpc-api</artifactId>
+				<version>${javax.xml.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis</groupId>
+				<artifactId>axis</artifactId>
+				<version>${org.apache.axis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mod4j.org.apache.commons</groupId>
+				<artifactId>logging</artifactId>
+				<version>${org.mod4j.org.apache.commons.logging}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-discovery</groupId>
+				<artifactId>commons-discovery</artifactId>
+				<version>${commons.discovery.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-core</artifactId>
+				<version>${org.drools.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>knowledge-api</artifactId>
+				<version>${org.drools.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-compiler</artifactId>
+				<version>${org.drools.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-templates</artifactId>
+				<version>${org.drools.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-highlighter</artifactId>
+				<version>${org.apache.lucene.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.lucene</groupId>
+						<artifactId>lucene-memory</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-spellchecker</artifactId>
+				<version>${org.apache.lucene.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tika</groupId>
+				<artifactId>tika-core</artifactId>
+				<version>${org.apache.tika.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons.codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tika</groupId>
+				<artifactId>tika-parsers</artifactId>
+				<version>${org.apache.tika.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>asm</groupId>
+						<artifactId>asm</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.commons</groupId>
+						<artifactId>commons-compress</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>net.sourceforge.nekohtml</groupId>
+						<artifactId>nekohtml</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-stax-api_1.0_spec</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${org.apache.poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>pdfbox</groupId>
+				<artifactId>pdfbox</artifactId>
+				<version>${pdfbox.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.fontbox</groupId>
+				<artifactId>fontbox</artifactId>
+				<version>${org.fontbox.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-scratchpad</artifactId>
+				<version>${org.apache.poi.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${org.apache.poi.version}</version>
+				<!--  Needed for qa rules export from wb gui <exclusions>
+					<exclusion>
+						<groupId>dom4j</groupId>
+						<artifactId>dom4j</artifactId>
+					</exclusion>
+				</exclusions>-->
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml-schemas</artifactId>
+				<version>${org.apache.poi.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>stax</groupId>
+						<artifactId>stax-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-stax-api_1.0_spec</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.ihtsdo</groupId>
+					<artifactId>wb-dita-maven-plugin</artifactId>
+					<version>${org.ihtsdo.wb-toolkit.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.3-default-excludes-patch</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.4.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.ihtsdo</groupId>
+					<artifactId>wb-bdb-mojo</artifactId>
+					<version>${org.ihtsdo.wb-toolkit.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>buildnumber-maven-plugin</artifactId>
+					<version>1.0</version>
+					<executions>
+						<execution>
+							<phase>validate</phase>
+							<goals>
+								<goal>create</goal>
+							</goals>
+							<configuration>
+								<timestampFormat>{0,date,yyyy-MM-dd HH.mm.ss}</timestampFormat>
+								<items>
+									<item>timestamp</item>
+								</items>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.ihtsdo</groupId>
+					<artifactId>wb-mojo</artifactId>
+					<version>${org.ihtsdo.wb-toolkit.version}</version>
+					<configuration>
+						<stagingDirectory>${user.home}/Sites/</stagingDirectory>
+						<visibility>priv</visibility>
+						<cubitProject>cement</cubitProject>
+						<siteRoot>${project.artifactId}</siteRoot>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.ihtsdo</groupId>
+							<artifactId>wb-bdb</artifactId>
+							<version>${org.ihtsdo.wb-toolkit.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.lucene</groupId>
+							<artifactId>lucene-core</artifactId>
+							<version>${org.apache.lucene.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<!-- Disable all temporarily until we want documentation included
+						<arguments>-Pall,installer,pbl</arguments>
+						-->
+						<arguments>-Psync,installer,pbl</arguments>
+					</configuration>
+				</plugin>
+
+				<!-- Installer configuration -->
+				<plugin>
+					<groupId>com.google.code.maven-install4j</groupId>
+					<artifactId>maven-install4j-plugin</artifactId>
+					<version>0.1.1</version>
+					<configuration>
+						<!-- must be in path -->
+						<executable>install4jc</executable>
+						<releaseId>${project.version}</releaseId>
+						<verbose>true</verbose>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>com.maestrodev</groupId>
+				<artifactId>zip-bundle-maven-plugin</artifactId>
+				<version>1.0</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.1</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.jvnet.wagon-svn</groupId>
+						<artifactId>wagon-svn</artifactId>
+						<version>1.12-mimeTypes-1</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.2</version>
+							<reportSets>
+								<reportSet>
+									<reports>
+										<report>index</report>
+										<report>summary</report>
+										<report>scm</report>
+										<report>plugins</report>
+										<report>plugin-management</report>
+									</reports>
+								</reportSet>
+							</reportSets>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<!-- Nothing to do here, just in sub-modules. Listed here for documentation purposes -->
+		<profile>
+			<id>installer</id>
+		</profile>
+	</profiles>
+	<modules>
+		<module>database</module>
+		<module>editor</module>
+		<module>batch-qa-runner</module>
+	</modules>
+</project>
