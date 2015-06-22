@@ -1,0 +1,18 @@
+<assembly>
+  <id>attach-database</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>./berkeley-db</directory>
+      <outputDirectory>/berkeley-db</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>./workflow/</directory>
+      <outputDirectory>/workflow</outputDirectory>
+    </fileSet>
+  </fileSets>
+  <includeBaseDirectory>false</includeBaseDirectory>
+</assembly>
+

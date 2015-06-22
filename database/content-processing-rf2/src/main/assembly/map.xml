@@ -1,0 +1,13 @@
+<assembly>
+  <id>uuid-sct-map-files</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${basedir}/src/main/sct-uuid-maps</directory>
+      <outputDirectory>/sct-uuid-maps</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

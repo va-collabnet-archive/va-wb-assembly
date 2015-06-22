@@ -1,0 +1,22 @@
+<assembly>
+  <id>zip-profiles</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>src/main/profiles</directory>
+      <outputDirectory>/profiles</outputDirectory>
+      <useDefaultExcludes>false</useDefaultExcludes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/arena</directory>
+      <outputDirectory>/arena</outputDirectory>
+      <includes>
+        <include>**/*.mxe</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <includeBaseDirectory>false</includeBaseDirectory>
+</assembly>
+

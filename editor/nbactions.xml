@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-update exec</actionName>
+            <displayName>update exec</displayName>
+            <recursive>false</recursive>
+            <goals>
+                <goal>initialize</goal>
+                <goal>exec:exec</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>update-tk</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean installer offline</actionName>
+            <displayName>clean installer offline</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>installer</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install -e</actionName>
+            <displayName>clean install -e</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-e</goal>
+                
+                
+            </goals>
+            <properties>
+                
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+            </properties>
+        </action>
+        
+    </actions>

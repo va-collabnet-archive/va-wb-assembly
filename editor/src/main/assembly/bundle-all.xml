@@ -1,0 +1,11 @@
+<assembly>
+  <id>bundle</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <componentDescriptors>
+    <componentDescriptor>src/main/assembly/lib-bundle.xml</componentDescriptor>
+    <componentDescriptor>src/main/assembly/project-dirs.xml</componentDescriptor>
+  </componentDescriptors>
+</assembly>

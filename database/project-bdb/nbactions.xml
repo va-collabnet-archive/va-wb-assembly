@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>CUSTOM-clean install 4g</actionName>
+        <displayName>clean install 4g</displayName>
+        <goals>
+            <goal>-e</goal>
+            <goal>clean</goal>
+            <goal>install</goal>
+        </goals>
+        <properties>
+            <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>clean-db</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
+        <actionName>CUSTOM-clean install 4g debug</actionName>
+        <displayName>clean install 4g debug</displayName>
+        <goals>
+            <goal>-e</goal>
+            <goal>clean</goal>
+            <goal>install</goal>
+        </goals>
+        <properties>
+            <jpda.listen>true</jpda.listen>
+            <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</Env.MAVEN_OPTS>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>clean-db</activatedProfile>
+        </activatedProfiles>
+    </action>
+</actions>

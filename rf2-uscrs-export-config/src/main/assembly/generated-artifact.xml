@@ -1,0 +1,17 @@
+<assembly>
+	<id>uscrs</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<includes>
+				<include>*.xls</include>
+			</includes>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<includeBaseDirectory>false</includeBaseDirectory>
+</assembly>
+

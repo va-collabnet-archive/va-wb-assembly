@@ -1,0 +1,38 @@
+<component>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/lib</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+      <includes>
+          <include>*:*:jar</include>
+      </includes>
+      <!-- TODO: why is resources in twice? -->
+      <excludes>
+        <!-- Included below -->
+        <exclude>org.dwfa.jini:jsk-dl</exclude>
+        <!-- not sure why this is not included but others in its tree are -->
+        <exclude>au.csiro:snorocket</exclude>
+        <!-- required at compile time by rule-engine, but not at runtime -->
+        <exclude>junit:junit</exclude>
+      </excludes>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/lib-dl</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+      <includes>
+        <include>org.dwfa.jini:jsk-dl</include>
+      </includes>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/lib-ext</outputDirectory>
+      <unpack>false</unpack>
+      <scope>provided</scope>
+      <includes>
+        <include>org.dwfa.jini:jsk-policy</include>
+      </includes>
+    </dependencySet>
+    
+  </dependencySets>
+</component>

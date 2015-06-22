@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+        <groupId>gov.va.wb</groupId>
+        <artifactId>va-jif-wb-assembly</artifactId>
+        <version>4.0-SNAPSHOT</version>
+    </parent>
+
+	<artifactId>USCRS-Export-data</artifactId>
+	<packaging>pom</packaging>
+	<name>USCRS-Export-data</name>
+	
+	<!--scm>
+		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod/rf2-uscrs-export-config</connection>
+		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod/rf2-uscrs-export-config</developerConnection>
+		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-jif-wb-assembly/branches/3.4-prod/rf2-uscrs-export-config?root=va-jif-wb-bundle&amp;system=exsy1002</url>
+	</scm-->
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>project-bdb</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>content-processing-rf2</artifactId>
+			<version>${project.version}</version>
+			<classifier>release-files</classifier>
+			<type>zip</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-dependencies</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeTypes>zip</includeTypes>
+							<excludeTransitive>true</excludeTransitive>
+							<outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.ihtsdo</groupId>
+				<artifactId>wb-mojo</artifactId>
+				<version>${org.ihtsdo.wb-toolkit.version}</version>
+				<executions>
+					<execution>
+						<id>export-uscrs</id>
+						<goals>
+							<goal>export-uscrs</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<viewPathConceptSpecFsn>${projectReleaseCandidatePathFsn}</viewPathConceptSpecFsn>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-data</id>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/assembly/generated-artifact.xml</descriptor>
+							</descriptors>
+						</configuration>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

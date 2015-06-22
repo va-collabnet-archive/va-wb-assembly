@@ -1,0 +1,16 @@
+
+<assembly>
+    <id>zip-queues</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/sampleProcesses</directory>
+            <outputDirectory>/sampleProcesses</outputDirectory>
+            <useDefaultExcludes>false</useDefaultExcludes>
+        </fileSet>
+    </fileSets>
+    <includeBaseDirectory>false</includeBaseDirectory>
+</assembly>
+

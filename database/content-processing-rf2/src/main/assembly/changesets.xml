@@ -1,0 +1,13 @@
+<assembly>
+  <id>changesets</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${project.build.directory}/generated-resources/changesets</directory>
+      <outputDirectory>/changesets</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

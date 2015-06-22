@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-clean prepare</actionName>
+            <displayName>clean prepare</displayName>
+            <goals>
+                <goal>-e</goal>
+                <goal>clean</goal>
+                <goal>prepare-package</goal>
+            </goals>
+            <properties>
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>clean-db</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-debug clean prepare</actionName>
+            <displayName>debug clean prepare</displayName>
+            <goals>
+                <goal>-e</goal>
+                <goal>clean</goal>
+                <goal>prepare-package</goal>
+            </goals>
+            <properties>
+                <jpda.listen>true</jpda.listen>
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</Env.MAVEN_OPTS>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>clean-db</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>clean-db</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>build</actionName>
+            <goals>
+                <goal>install</goal>
+                
+            </goals>
+            <properties>
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>clean-db</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean installer 4g</actionName>
+            <displayName>clean installer 4g</displayName>
+            <goals>
+                <goal>-e</goal>
+                <goal>clean</goal>
+                <goal>install</goal>
+                
+                
+            </goals>
+            <properties>
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>installer</activatedProfile>
+                <activatedProfile>clean-db</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install 4g</actionName>
+            <displayName>clean install 4g</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-e</goal>
+                
+            </goals>
+            <properties>
+                <Env.MAVEN_OPTS>-ea -d64 -XX:+UseCompressedOops -Xmx4g -Xms4g</Env.MAVEN_OPTS>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>clean-db</activatedProfile>
+            </activatedProfiles>
+        </action>
+        
+    </actions>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/generated-resources/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>false</useDefaultExcludes>
+            <outputDirectory>/</outputDirectory>
+            <excludes>
+                
+                <!-- temporarily remove drools qa sync components -->
+              <!--  <exclude>plugins/**/org.ihtsdo.rules.tasks.TestUsingLibrary.task</exclude>
+                <exclude>plugins/**/71_separator</exclude>
+                <exclude>plugins/**/75_update_all_rules.bp</exclude>
+                <exclude>plugins/**/76_launch-qa-manager.bp</exclude>
+                <exclude>plugins/**/77_openQaCaseManager.bp</exclude>   -->
+                
+                <!-- exclude QA pre-commit rules -->
+                <exclude>**/org.ihtsdo.rules.tasks.TestUsingPreCommitContext.task</exclude>
+
+  
+                
+                <!-- workflow menu items EXCLUDE THIS IF YOU DON'T WANT WF -->
+      <!--          <exclude>**/80_separator</exclude> 
+                <exclude>**/90_update_editor_category_refset.bp</exclude>
+                <exclude>**/91_update_state_transition_refset.bp</exclude>
+                <exclude>**/95_batch_initialize_workflow.bp</exclude>
+                <exclude>**/96_ShowWorkflowSearchPanel.bp</exclude> -->
+                <exclude>**/add_new_intl_user.bp</exclude>         
+                            
+                <!-- Plugins area-->  
+                <!-- Searches to remove they are not relevant or confusing to users -->
+                <exclude>**/org.dwfa.ace.task.search.DifferenceFullySpecifiedName.task</exclude>
+                <exclude>**/org.dwfa.ace.task.search.DifferencePreferredName.task</exclude>
+                <exclude>**/org.dwfa.ace.task.search.DifferenceRelsDestination.task</exclude>
+                <exclude>**/org.dwfa.ace.task.search.DifferenceRelsSource.task</exclude>
+                <exclude>**/org.dwfa.ace.task.search.DifferenceRelsSourceOrDestination.task</exclude>
+                <!-- file bps -->
+                <exclude>**/30_launch bp.bp</exclude>
+                <exclude>**/40_separator</exclude>
+                <exclude>**/50_GenerateJavaBinding.bp</exclude>
+                <!-- component bps -->
+                <exclude>**/clone.bp</exclude>
+                <exclude>**/new_concept.bp</exclude>
+                
+                <exclude>**/Create_new_Collabnet_queue.bp</exclude>
+               
+                <!--Tasks bp -->
+                <exclude>**/95_batch_initialize_workflow.bp</exclude>
+                <exclude>**/modify_user_role.bp</exclude>
+              <!--  <exclude>**/81_create_report.bp</exclude> 
+                <exclude>**/82_update-dialect-list.bp</exclude>
+                <exclude>**/83_update-ics-list.bp</exclude>
+                <exclude>**/50_separator</exclude>
+                <exclude>**/22_separator</exclude> -->
+                <exclude>**/23_show_inbox.bp</exclude>
+            <!--    <exclude>**/24_ShowTopToggles.bp</exclude> -->
+                <exclude>**/20_Tasks/25_differenceSearch.bp</exclude>                
+                <exclude>**/21_modify_overall_refset_status.bp</exclude>
+                <exclude>**/20_import_refset.bp</exclude>
+                <exclude>**/11_SME*.bp</exclude>
+                <exclude>**/changeStatusToSelected.bp</exclude>
+                <exclude>**/90_separator</exclude>
+                <!-- list view bps -->
+                <exclude>**/descriptions-update-from-file.bp</exclude>
+                <exclude>**/add_children.bp</exclude>
+                <exclude>**/iterate_current.bp</exclude>
+                <exclude>**/iterate_flag.bp</exclude>
+                <exclude>**/iterate.bp</exclude>
+                <exclude>**/move_to_new_parent.bp</exclude>  
+                <!-- refset bps -->
+                <exclude>**/6.*.bp</exclude>
+                <exclude>**/7.*.bp</exclude>
+                <exclude>**/8.*.bp</exclude>
+                <exclude>plugins/**/desc/*.bp</exclude>
+                <exclude>plugins/**/desc/</exclude>
+                <exclude>plugins/**/contains/*contains-desc.bp</exclude>
+                <!-- menu help bps -->
+                <exclude>**/90_GotoNHS_Nice.bp</exclude>             
+                <exclude>**/20_Open_HTML_Guidebook.bp</exclude>
+                
+                <exclude>resources/</exclude>
+                <exclude>config/ace.config</exclude>
+                <exclude>processes/**</exclude>
+                <exclude>**/TestForEdgCType2Req.task</exclude>
+                <exclude>**/TestForEdgEType2Req.task</exclude>
+           <!--     <exclude>plugins/**/org.dwfa.ace.task.commit.TestForSelfReferencingRelationships.task</exclude> -->
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForCreateNewRefsetPermission.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForEditRefsetPermission.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestDescGt256Bytes.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForCreateNewRefsetPermission.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForFsnValue.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForFullySpecifiedName.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForIsa.task</exclude>
+           <!-- <exclude>plugins/**/org.dwfa.ace.task.commit.TestForIsaCycle.task</exclude> -->
+            <!--    <exclude>plugins/**/org.dwfa.ace.task.commit.TestForNegatedOr.task</exclude> -->
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForNotNumericFsn.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForNotNumericPreferredTerm.task</exclude>
+            <!--    <exclude>plugins/**/org.dwfa.ace.task.commit.TestForSelfReferencingRefsetSpec.task</exclude> -->
+              <!--  <exclude>plugins/**/org.dwfa.ace.task.commit.TestForUneditedDefaults.task</exclude> -->
+              <!--  <exclude>plugins/**/org.dwfa.ace.task.commit.TestForValidRefsetSpec.task</exclude> -->
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForPreferredTermValue.task</exclude>
+                <exclude>plugins/**/org.dwfa.ace.task.commit.TestForInactiveConceptInExtension.task</exclude> 
+                <exclude>**/org.ihtsdo.rules.tasks.TestForFullySpecifiedName.task</exclude>
+                
+                <!--exclude these per alejandro -->
+                <exclude>plugins/**/org.ihtsdo.translation.tasks.commit.TestForHomograph.task</exclude>
+                <exclude>plugins/**/org.ihtsdo.translation.tasks.TestRejectRelsAndAttributesChanges.task</exclude> 
+                <!-- disable pre-commit QA -->
+                <exclude>plugins/precommit/</exclude> 
+            </excludes>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+      <!-- TODO: needed? in SAB, but not sync -->
+        <fileSet>
+            <directory>${project.build.directory}/generated-resources/plugins/migration-wf/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>/plugins/migration-wf</outputDirectory>
+            <includes>
+                <include>AdvanceWorkflow.bp</include>
+            </includes>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        
+        <fileSet>
+            <directory>${project.build.directory}/generated-resources/processes/pallets/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>profiles/startup</outputDirectory>
+            <includes>
+                <include>HideSubversionToggle.bp</include>
+            </includes>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/berkeley-db/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>berkeley-db</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/config</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>true</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>config</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/sync</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory></outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/docs</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>docs</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>resources</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/plugins/component/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>plugins/component/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/about-box/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>config/about-box/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/license/</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory></outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/icons</directory>
+            <lineEnding>keep</lineEnding>
+            <filtered>false</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>config/icons</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+    </fileSets>
+</component>
+        

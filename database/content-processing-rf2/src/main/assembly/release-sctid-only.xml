@@ -1,0 +1,16 @@
+<assembly>
+  <id>release-files-sctid-only</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${project.build.directory}/generated-resources/iec</directory>
+      <outputDirectory>/</outputDirectory>
+      <excludes>
+      	<exclude>*.txt</exclude>  <!-- Don't include the UUID files in the root folder -->
+      </excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

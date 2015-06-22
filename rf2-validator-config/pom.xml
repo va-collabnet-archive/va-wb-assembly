@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>gov.va.wb</groupId>
+	<artifactId>rf2-validator-config</artifactId>
+	<name>rf2-validator-config</name>
+	<version>4.0-rf2-validator-SNAPSHOT</version>
+	
+	<packaging>pom</packaging>
+
+	<properties>
+		<rf2.validator.version>1.1</rf2.validator.version>
+		<sourceData.groupId>gov.va.wb</sourceData.groupId>
+		<sourceData.artifactId>content-processing-rf2</sourceData.artifactId>
+		<sourceData.version>4.0-SNAPSHOT</sourceData.version>
+		<bdbData.groupId>gov.va.wb</bdbData.groupId>
+		<bdbData.artifactId>project-bdb</bdbData.artifactId>
+		<bdbData.version>4.0-SNAPSHOT</bdbData.version>
+		<!--svnDeployPath>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod-rf2-reports</svnDeployPath-->
+	</properties>
+	
+	<!--scm>
+		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod/rf2-validator-config</connection>
+		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod/rf2-validator-config</developerConnection>
+		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-jif-wb-assembly/branches/3.4-prod/rf2-validator-config?root=va-jif-wb-bundle&amp;system=exsy1002</url>
+	</scm-->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-data</id>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/assembly/generated-artifact.xml</descriptor>
+							</descriptors>
+						</configuration>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Get source RF2 export file from archiva -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>extract-RF2-data</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>${sourceData.groupId}</groupId>
+									<artifactId>${sourceData.artifactId}</artifactId>
+									<version>${sourceData.version}</version>
+									<classifier>release-files</classifier>
+									<type>zip</type>
+								</artifactItem>
+							</artifactItems>
+							<outputDirectory>${project.build.directory}/generated-resources/RF2-data</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>extract-bdb-data</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>${bdbData.groupId}</groupId>
+									<artifactId>${bdbData.artifactId}</artifactId>
+									<version>${bdbData.version}</version>
+									<type>zip</type>
+								</artifactItem>
+							</artifactItems>
+							<outputDirectory>${project.build.directory}/generated-resources/bdb-data</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>gov.va.oia.terminology.converters</groupId>
+				<artifactId>rf2-validator-mojo</artifactId>
+				<version>${rf2.validator.version}</version>
+				<executions>
+					<execution>
+						<id>rf2-validate</id>
+						<configuration>
+							<inputRF2>${project.build.directory}/generated-resources/RF2-data</inputRF2>
+							<inputDB>${project.build.directory}/generated-resources/bdb-data/berkeley-db</inputDB>
+							<expectedEffectiveTime>20140731</expectedEffectiveTime>
+						</configuration>
+						<goals>
+							<goal>rf2-validate</goal>
+						</goals>
+						<phase>generate-resources</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<!-- A bunch of optional stuff down here for deploying the reports to SVN -->
+	<profiles>
+		<profile>
+			<id>svn-deploy</id>
+			<properties>
+				<svnCheckoutFolder>${basedir}/target/svn-publish</svnCheckoutFolder>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.7</version>
+						<executions>
+							<execution>
+								<phase>prepare-package</phase>
+								<configuration>
+									<target>
+										<copy todir="${svnCheckoutFolder}">
+											<fileset dir="${basedir}/target/" includes="*.txt" />
+										</copy>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.8.1</version>
+						<configuration>
+							<!-- Seems to be a bug in scm here... not sure why I have to define both...-->
+							<connectionUrl>${svnDeployPath}</connectionUrl>
+							<developerConnectionUrl>${svnDeployPath}</developerConnectionUrl>
+						</configuration>
+						<executions>
+							<execution>
+								<id>checkout-from-svn</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>checkout</goal>
+								</goals>
+								<configuration>
+									<basedir>${basedir}/target/"</basedir>
+									<checkoutDirectory>${svnCheckoutFolder}</checkoutDirectory>
+								</configuration>
+							</execution>
+							<execution>
+								<id>commit-to-svn</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>checkin</goal>
+								</goals>
+								<configuration>
+									<basedir>${svnCheckoutFolder}</basedir>
+									<message>Automated Build / Publish</message>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- More Maven obnoxiousness.  This hack-fixed mojo needs to run in between the two executions above.  Should really 
+					both be in deploy.  But, maven doesn't let you do that, without cheating the build cycle.  Sigh.  So, the way it all comes together is:
+					generate-sources:  checkout, create the actual reports
+					prepare-package: Copy stuff into the SVN checkout folder
+					package: Run the SVN add commands
+					deploy: Checkin -->
+					<plugin>
+						<groupId>org.apache.maven.scm.plugins</groupId>
+						<artifactId>maven-scm-plugin-add-new</artifactId>
+						<version>1.8.1</version>
+						<configuration>
+							<connectionUrl>${svnDeployPath}</connectionUrl>
+						</configuration>
+						<executions>
+							<execution>
+								<id>add-new</id>
+								<phase>package</phase>
+								<goals>
+									<goal>add-new</goal>
+								</goals>
+								<configuration>
+									<basedir>${svnCheckoutFolder}</basedir>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
