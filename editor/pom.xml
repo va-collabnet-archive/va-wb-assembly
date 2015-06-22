@@ -10,8 +10,8 @@
     <artifactId>editor</artifactId>
     <packaging>pom</packaging>
 
-    <name>JIF Terminology Workbench : Editor</name>
-    <description>JIF Terminology Workbench Editor</description>
+    <name>VA Terminology Workbench : Editor</name>
+    <description>VA Terminology Workbench Editor</description>
 
     <dependencies>
         <dependency>
@@ -695,7 +695,7 @@
                                         </property>
                                         <property>
                                             <name>bundle.short_name</name>
-                                            <value>"JIF Terminology Workbench"</value>
+                                            <value>"VA Terminology Workbench"</value>
                                         </property>
                                         <property>
                                             <name>media.dir</name>

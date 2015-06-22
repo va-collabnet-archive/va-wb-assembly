@@ -10,8 +10,8 @@
     <artifactId>profiles</artifactId>
     <packaging>pom</packaging>
 
-    <name>JIF Terminology Workbench : Database : User Profiles</name>
-    <description>JIF Terminology Workbench User Profiles</description>
+    <name>VA Terminology Workbench : Database : User Profiles</name>
+    <description>VA Terminology Workbench User Profiles</description>
     
     <distributionManagement>
         <site>

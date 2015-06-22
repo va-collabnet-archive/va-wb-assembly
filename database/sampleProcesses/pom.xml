@@ -10,8 +10,8 @@
     <artifactId>sampleProcesses</artifactId>
     <packaging>pom</packaging>
   
-    <name>JIF Terminology Workbench : Database : Sample Processes</name>
-    <description>JIF Terminology Workbench Sample Processes</description>
+    <name>VA Terminology Workbench : Database : Sample Processes</name>
+    <description>VA Terminology Workbench Sample Processes</description>
     <build>
         <plugins>
             <plugin>

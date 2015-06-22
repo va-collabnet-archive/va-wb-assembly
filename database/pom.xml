@@ -10,8 +10,8 @@
     <artifactId>database</artifactId>
     <packaging>pom</packaging>
   
-    <name>JIF Terminology Workbench : Database Modules</name>
-    <description>JIF Terminology Workbench Database Modules</description>
+    <name>VA Terminology Workbench : Database Modules</name>
+    <description>VA Terminology Workbench Database Modules</description>
 
     <dependencyManagement>
         <dependencies>

@@ -10,8 +10,8 @@
 	<artifactId>project-bdb</artifactId>
 	<packaging>pom</packaging>
 
-	<name>JIF Terminology Workbench : Database : BDB</name>
-	<description>JIF Terminology Workbench Berkeley Database</description>
+	<name>VA Terminology Workbench : Database : BDB</name>
+	<description>VA Terminology Workbench Berkeley Database</description>
 	<dependencies>
 		<dependency>
 			<groupId>${baselineDataGroup}</groupId>

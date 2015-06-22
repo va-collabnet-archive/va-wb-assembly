@@ -10,8 +10,8 @@
     <artifactId>content-processing-rf2</artifactId>
     <packaging>pom</packaging>
 
-    <name>JIF Terminology Workbench : Database : Content Processing</name>
-    <description>JIF Terminology Workbench export and content processing</description>
+    <name>VA Terminology Workbench : Database : Content Processing</name>
+    <description>VA Terminology Workbench export and content processing</description>
     
     <distributionManagement>
         <site>

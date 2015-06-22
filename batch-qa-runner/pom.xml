@@ -10,8 +10,8 @@
     <artifactId>batch-qa-runner</artifactId>
     <packaging>pom</packaging>
 
-    <name>JIF Terminology Workbench : Batch QA Runner</name>
-    <description>JIF Terminology Workbench Batch QA Runner</description>
+    <name>VA Terminology Workbench : Batch QA Runner</name>
+    <description>VA Terminology Workbench Batch QA Runner</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

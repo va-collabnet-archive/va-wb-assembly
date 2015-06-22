@@ -10,8 +10,8 @@
     <artifactId>queues</artifactId>
     <packaging>pom</packaging>
   
-    <name>JIF Terminology Workbench : Database : User Queues</name>
-    <description>JIF Terminology Workbench User Queues</description>
+    <name>VA Terminology Workbench : Database : User Queues</name>
+    <description>VA Terminology Workbench User Queues</description>
     
     <distributionManagement>
         <site>
