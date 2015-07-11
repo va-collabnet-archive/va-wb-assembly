@@ -232,8 +232,8 @@
     
     <build>
         <plugins>
-            <plugin>
-                <!--Used this to get truezip to extract, as maven is once again, broken-->
+            <!--plugin>
+                <!- -Used this to get truezip to extract, as maven is once again, broken- ->
                 <groupId>com.github.goldin</groupId>
                 <artifactId>copy-maven-plugin</artifactId>
                 <version>0.2.5</version>
@@ -263,7 +263,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -278,7 +278,7 @@
                             <includeTypes>zip</includeTypes>
                             <useDefaultExcludes>false</useDefaultExcludes>
                             <excludes>**/synchronize.bp</excludes>
-                            <excludeArtifactIds>${userDataArtifactId},project-bdb</excludeArtifactIds> <!--  exclude project-bdb, because maven is broken (truezip above) -->
+                            <excludeArtifactIds>${userDataArtifactId}</excludeArtifactIds>
                             <excludeTransitive>true</excludeTransitive>
                             <!-- alternative if above is too aggressive
                   <includeArtifactIds>profiles,queues,documentation,project-bdb,wb-ide-admin-bp,wb-ide-user-bp</includeArtifactIds>
