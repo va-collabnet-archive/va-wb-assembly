@@ -165,6 +165,10 @@
                                             <Description>${taxonomyParentFsn}</Description>
                                         </ConceptDescriptor>
                                     </taxonomyParentConcepts>
+                                    <langRefsetConceptSpec>
+                                        <uuid>bca0a686-3516-3daf-8fcf-fe396d13cfad</uuid>
+                                        <Description>United States of America English language reference set (foundation metadata concept)</Description>
+                                    </langRefsetConceptSpec>
                                     <conceptsToSkip>
                                         <ConceptDescriptor>
                                             <uuid>4e995b20-f506-3bfc-a831-c8c469121953</uuid>
@@ -220,6 +224,10 @@
                                             <Description>${taxonomyParentFsn}</Description>
                                         </ConceptDescriptor>
                                     </taxonomyParentConcepts>
+                                    <langRefsetConceptSpec>
+                                        <uuid>bca0a686-3516-3daf-8fcf-fe396d13cfad</uuid>
+                                        <Description>United States of America English language reference set (foundation metadata concept)</Description>
+                                    </langRefsetConceptSpec>
                                     <conceptsToSkip>
                                         <ConceptDescriptor>
                                             <uuid>4e995b20-f506-3bfc-a831-c8c469121953</uuid>
@@ -275,6 +283,10 @@
                                             <Description>${taxonomyParentFsn}</Description>
                                         </ConceptDescriptor>
                                     </taxonomyParentConcepts>
+                                    <langRefsetConceptSpec>
+                                        <uuid>bca0a686-3516-3daf-8fcf-fe396d13cfad</uuid>
+                                        <Description>United States of America English language reference set (foundation metadata concept)</Description>
+                                    </langRefsetConceptSpec>
                                     <conceptsToSkip>
                                         <ConceptDescriptor>
                                             <uuid>4e995b20-f506-3bfc-a831-c8c469121953</uuid>
