@@ -7,7 +7,7 @@
   <fileSets>
     <fileSet>
       <directory>${project.build.directory}/generated-resources/changesets</directory>
-      <outputDirectory>/changesets</outputDirectory>
+      <outputDirectory>changesets</outputDirectory>
     </fileSet>
   </fileSets>
 </assembly>

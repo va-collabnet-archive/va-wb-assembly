@@ -130,7 +130,6 @@
     <module>content-processing-rf2</module>
     <module>profiles</module>
     <module>queues</module>
-    <module>sampleProcesses</module>
     <module>integration-tests</module>
   </modules>
 </project>

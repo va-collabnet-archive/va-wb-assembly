@@ -6,11 +6,11 @@
   <fileSets>
     <fileSet>
       <directory>./berkeley-db</directory>
-      <outputDirectory>/berkeley-db</outputDirectory>
+      <outputDirectory>berkeley-db</outputDirectory>
     </fileSet>
     <fileSet>
       <directory>./workflow/</directory>
-      <outputDirectory>/workflow</outputDirectory>
+      <outputDirectory>workflow</outputDirectory>
     </fileSet>
   </fileSets>
   <includeBaseDirectory>false</includeBaseDirectory>

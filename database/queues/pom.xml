@@ -24,6 +24,25 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.ihtsdo</groupId>
+                <artifactId>wb-mojo</artifactId>
+                <version>${org.ihtsdo.wb-toolkit.version}</version>
+                <executions>
+                    <execution>
+                        <id>svn-checkout-queues-in-target</id>
+                        <configuration>
+                            <username>${ihtsdo-scm-username}</username>
+                            <password>${ihtsdo-scm-password}</password>
+                            <sourceDirectory>src/main/queues</sourceDirectory>
+                            <destinationDirectory>queues</destinationDirectory>
+                        </configuration>
+                        <goals>
+                            <goal>svn-checkout-in-target</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>

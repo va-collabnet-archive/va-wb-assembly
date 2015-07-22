@@ -7,7 +7,7 @@
   <fileSets>
     <fileSet>
       <directory>${basedir}/src/main/sct-uuid-maps</directory>
-      <outputDirectory>/sct-uuid-maps</outputDirectory>
+      <outputDirectory>sct-uuid-maps</outputDirectory>
     </fileSet>
   </fileSets>
 </assembly>

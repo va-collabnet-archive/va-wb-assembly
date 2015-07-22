@@ -61,7 +61,7 @@
 		<qaRulesExtensionArtifactId>ihtsdo-ie-rules-package</qaRulesExtensionArtifactId>
 		<qaRulesExtensionVersion>0.0.11</qaRulesExtensionVersion>
 		<qaRulesExtensionURL>http://mgr.servers.aceworkspace.net:50002/drools-guvnor550-final/org.drools.guvnor.Guvnor/package/ihtsdoIntEditionRules/ihtsdoIntEditionRules</qaRulesExtensionURL>
-		<publicationEffectiveDate>2014.01.31 00:00:00</publicationEffectiveDate>
+		<publicationEffectiveDate>2015.07.31 00:00:00</publicationEffectiveDate>
 		<projectRulesGroup>gov.va.wb</projectRulesGroup>
 		<projectRulesArtifactId>va-wb-rules</projectRulesArtifactId>
 		<projectRulesVersion>4.0-SNAPSHOT</projectRulesVersion>
@@ -88,9 +88,6 @@
 		<refsetParentUuid>7e2c0517-6181-5ba4-8626-845bc0605521</refsetParentUuid><!-- uuid of parent concept for refsets to release-->
 		<taxonomyParentFsn>SNOMED CT Concept</taxonomyParentFsn><!-- fsn of parent for terminolgoy to release-->
 		<taxonomyParentUuid>ee9ac5d2-a07c-3981-a57a-f7f26baf38d8</taxonomyParentUuid><!-- uuid of parent for terminolgoy to release-->
-		<!--EXAMPLE: NEED for DK, otherwise remove-->
-		<!--conceptNumberRefsetParentFsn>Danish pharmaceutical products reference sets</conceptNumberRefsetParentFsn>
-		<conceptNumberRefsetParentUuid>e929c29f-08a0-308d-8c33-e0ec83bb4f0a</conceptNumberRefsetParentUuid-->
 		
 		<!-- other standardized project properties -->
 		<projectDevelopmentOriginUUID>49087125-2c90-5bf8-8e6c-22a6ef6fab6f</projectDevelopmentOriginUUID>  <!-- Type5UuidFactory.get(Type5UuidFactory.PATH_ID_FROM_FS_DESC, "FSN") -->
@@ -117,7 +114,7 @@
 		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.30-SNAPSHOT</org.ihtsdo.wb-toolkit.version>
 		<org.ihtsdo.wb-icons.version>1.0.12</org.ihtsdo.wb-icons.version>
 		<org.ihtsdo.resources.version>1.7</org.ihtsdo.resources.version>
-		<org.ihtsdo.user.bp.version>1.34</org.ihtsdo.user.bp.version>
+		<org.ihtsdo.user.bp.version>1.36</org.ihtsdo.user.bp.version>
 		<org.ihtsdo.admin.bp.version>1.19</org.ihtsdo.admin.bp.version>
 		<org.ihtsdo.migration-wf-data>0.0.9</org.ihtsdo.migration-wf-data>
 		<org.ihtsdo.mrcm.specs.version>0.0.11</org.ihtsdo.mrcm.specs.version>
@@ -132,7 +129,6 @@
 		<jbpm.version>5.4.0.Final</jbpm.version>
 		<mvel2.version>2.1.3.Final</mvel2.version>
 		<!-- Miscellaneous -->
-		<org.dwfa.jini.version>2.1</org.dwfa.jini.version>
 		<org.fontbox.version>1.1.0</org.fontbox.version>
 		<pdfbox.version>1.1.0</pdfbox.version>
 		<commons.codec.version>1.4</commons.codec.version>
@@ -262,29 +258,10 @@
 				<version>${org.ihtsdo.wb-toolkit.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.dwfa.jini</groupId>
-				<artifactId>start</artifactId>
-				<scope>compile</scope>
-				<version>${org.dwfa.jini.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>org.ihtsdo</groupId>
 				<artifactId>tk-arena-spec</artifactId>
 				<type>jar</type>
 				<version>${org.ihtsdo.wb-toolkit.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.dwfa.jini</groupId>
-				<artifactId>jsk-dl</artifactId>
-				<scope>compile</scope>
-				<version>${org.dwfa.jini.version}</version>
-			</dependency>
-			<dependency>
-				<!--A dependency required to use the jini/jehri dynamic provider security model-->
-				<groupId>org.dwfa.jini</groupId>
-				<artifactId>jsk-policy</artifactId>
-				<scope>provided</scope>
-				<version>${org.dwfa.jini.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>jgraphx</groupId>
@@ -414,12 +391,13 @@
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-ooxml</artifactId>
 				<version>${org.apache.poi.version}</version>
-				<!--  Needed for qa rules export from wb gui <exclusions>
+				<!--  Needed for qa rules export from wb gui 
+				<exclusions>
 					<exclusion>
 						<groupId>dom4j</groupId>
 						<artifactId>dom4j</artifactId>
 					</exclusion>
-				</exclusions>-->
+				</exclusions-->
 			</dependency>
 			<dependency>
 				<groupId>org.apache.poi</groupId>
@@ -455,19 +433,19 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<version>2.5.5</version>
-                    <!-- These dependencies get us multi-threaded zip - which is _way_ faster -->
-                    <dependencies>  
-                        <dependency>
-                            <groupId>org.codehaus.plexus</groupId>
-                            <artifactId>plexus-archiver</artifactId>
-                            <version>2.10.3</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.codehaus.plexus</groupId>
-                            <artifactId>plexus-io</artifactId>
-                            <version>2.6</version>
-                        </dependency>
-                    </dependencies>
+					<!-- These dependencies get us multi-threaded zip - which is _way_ faster -->
+					<dependencies>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-archiver</artifactId>
+							<version>2.10.3</version>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-io</artifactId>
+							<version>2.6</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>org.ihtsdo</groupId>

@@ -12,7 +12,6 @@
       <envVar name="JDK_HOME" />
     </searchSequence>
     <variables>
-      <variable name="jsk_policy_location" value="jre/lib/ext/jsk-policy-2.1.jar" description="" category="" />
       <variable name="project.version" value="" description="" category="" />
       <variable name="bundle.short_name" value="" description="" category="" />
       <variable name="bundle.installer_filename" value="" description="" category="" />
@@ -89,7 +88,7 @@ If you do not select this option, the environment will run as a stand-alone envi
   </files>
   <launchers>
     <launcher name="32bit Launcher" id="13594" customizedId="" external="false" excludeFromMenu="false" unixMode="755" menuName="${compiler:bundle.short_name}" icnsFile="${compiler:icons.dir}/app-icon.icns" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="">
-      <executable name="${compiler:bundle.short_name} 32" type="1" iconSet="true" iconFile="${compiler:icons.dir}/app-icon.ico" executableDir="" redirectStderr="true" stderrFile="${compiler:bundle.short_name}.log" stderrMode="overwrite" redirectStdout="true" stdoutFile="${compiler:bundle.short_name}.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false">
+      <executable name="${compiler:bundle.short_name} 32" type="1" iconSet="true" iconFile="${compiler:icons.dir}/app-icon.ico" executableDir="" redirectStderr="true" stderrFile="${compiler:bundle.short_name}.log" stderrMode="overwrite" redirectStdout="true" stdoutFile="${compiler:bundle.short_name}.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true">
         <versionInfo include="true" fileVersion="${compiler:bundle.version}" fileDescription="${compiler:bundle.file_description}" legalCopyright="${compiler:bundle.copyright}" internalName="${compiler:bundle.short_name}" productName="{compiler:bundle.short_name}" />
       </executable>
       <splashScreen show="true" autoOff="false" alwaysOnTop="true" width="32" height="32" bitmapFile="${compiler:icons.dir}/splash.png" java6SplashScreen="true">
@@ -121,7 +120,7 @@ If you do not select this option, the environment will run as a stand-alone envi
       </iconImageFiles>
     </launcher>
     <launcher name="64bit Launcher" id="14621" customizedId="" external="false" excludeFromMenu="false" unixMode="755" menuName="${compiler:bundle.short_name}" icnsFile="${compiler:icons.dir}/app-icon.icns" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="">
-      <executable name="${compiler:bundle.short_name} 64" type="1" iconSet="true" iconFile="${compiler:icons.dir}/app-icon.ico" executableDir="" redirectStderr="true" stderrFile="${compiler:bundle.short_name} 64.log" stderrMode="overwrite" redirectStdout="true" stdoutFile="${compiler:bundle.short_name} 64.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false">
+      <executable name="${compiler:bundle.short_name} 64" type="1" iconSet="true" iconFile="${compiler:icons.dir}/app-icon.ico" executableDir="" redirectStderr="true" stderrFile="${compiler:bundle.short_name} 64.log" stderrMode="overwrite" redirectStdout="true" stdoutFile="${compiler:bundle.short_name} 64.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true">
         <versionInfo include="true" fileVersion="${compiler:bundle.version}" fileDescription="${compiler:bundle.file_description}" legalCopyright="${compiler:bundle.copyright}" internalName="${compiler:bundle.short_name} 64" productName="{compiler:bundle.short_name} 64" />
       </executable>
       <splashScreen show="true" autoOff="false" alwaysOnTop="true" width="32" height="32" bitmapFile="${compiler:icons.dir}/splash.png" java6SplashScreen="true">
@@ -544,32 +543,6 @@ You acknowledge and agree that the Software may be subject to restrictions and c
                             <string>-Dorg.dwfa.AboutBoxGraphic="${compiler:bundle.about_box_graphic}"</string>
                           </void>
                         </array>
-                      </void>
-                    </object>
-                  </java>
-                </serializedBean>
-                <condition />
-              </action>
-              <action name="copy jsk-policy" id="10128" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
-                      <void property="destinationFile">
-                        <object class="java.io.File">
-                          <string>${compiler:jsk_policy_location}</string>
-                        </object>
-                      </void>
-                      <void property="files">
-                        <array class="java.io.File" length="1">
-                          <void index="0">
-                            <object class="java.io.File">
-                              <string>lib-ext/jsk-policy-2.1.jar</string>
-                            </object>
-                          </void>
-                        </array>
-                      </void>
-                      <void property="overwriteMode">
-                        <object class="com.install4j.api.context.OverwriteMode" field="NEVER" />
                       </void>
                     </object>
                   </java>
@@ -1623,7 +1596,7 @@ You acknowledge and agree that the Software may be subject to restrictions and c
     </applications>
   </installerGui>
   <mediaSets>
-    <macosFolder name="Mac OS X Folder" id="2027" customizedId="" mediaFileName="${compiler:bundle.installer_filename}-osx_folder" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="macosx-amd64-1.7.0_17" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" appleJre="false" customInstallBaseDir="" contentFilesType="1" downloadURL="" signLaunchers="false">
+    <macosFolder name="Mac OS X Folder" id="2027" customizedId="" mediaFileName="${compiler:bundle.installer_filename}-osx_folder" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="macosx-amd64-1.7.0_80" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" appleJre="false" customInstallBaseDir="" contentFilesType="1" downloadURL="" signLaunchers="false">
       <excludedLaunchers>
         <launcher id="13594" />
       </excludedLaunchers>
@@ -1637,7 +1610,6 @@ You acknowledge and agree that the Software may be subject to restrictions and c
       <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
       <exclude />
       <variables>
-        <variable name="jsk_policy_location" value="/Library/Java/Extensions/jsk-policy-2.1.jar" description="" category="" />
         <variable name="bundle.about_box_graphic" value="" description="" category="" />
       </variables>
       <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
@@ -1647,7 +1619,7 @@ You acknowledge and agree that the Software may be subject to restrictions and c
       <excludedComponents />
       <includedDownloadableComponents />
     </macosFolder>
-    <windows name="Windows JRE 7-64bit" id="14619" customizedId="" mediaFileName="${compiler:bundle.installer_filename}-win_jre-7-64bit" installDir="${compiler:bundle.short_name}" overridePrincipalLanguage="false" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="windows-amd64-1.7.0_17" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="" contentFilesType="1" downloadURL="" verifyIntegrity="true">
+    <windows name="Windows JRE 7-64bit" id="14619" customizedId="" mediaFileName="${compiler:bundle.installer_filename}-win_jre-7-64bit" installDir="${compiler:bundle.short_name}" overridePrincipalLanguage="false" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="windows-amd64-1.7.0_80" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="" contentFilesType="1" downloadURL="" verifyIntegrity="true">
       <excludedLaunchers>
         <launcher id="13594" />
       </excludedLaunchers>

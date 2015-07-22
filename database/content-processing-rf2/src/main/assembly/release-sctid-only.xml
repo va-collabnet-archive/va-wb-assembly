@@ -7,7 +7,7 @@
   <fileSets>
     <fileSet>
       <directory>${project.build.directory}/generated-resources/iec</directory>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory></outputDirectory>
       <excludes>
       	<exclude>*.txt</exclude>  <!-- Don't include the UUID files in the root folder -->
       </excludes>

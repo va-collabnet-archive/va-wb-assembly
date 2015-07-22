@@ -1,7 +1,7 @@
 <component>
   <dependencySets>
     <dependencySet>
-      <outputDirectory>/lib</outputDirectory>
+      <outputDirectory>lib</outputDirectory>
       <unpack>false</unpack>
       <scope>runtime</scope>
       <includes>
@@ -18,7 +18,7 @@
       </excludes>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>/lib-dl</outputDirectory>
+      <outputDirectory>lib-dl</outputDirectory>
       <unpack>false</unpack>
       <scope>runtime</scope>
       <includes>
@@ -26,7 +26,7 @@
       </includes>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>/lib-ext</outputDirectory>
+      <outputDirectory>lib-ext</outputDirectory>
       <unpack>false</unpack>
       <scope>provided</scope>
       <includes>

@@ -6,8 +6,8 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>src/main/queues</directory>
-            <outputDirectory>/queues</outputDirectory>
+            <directory>${project.build.directory}/queues</directory>
+            <outputDirectory>queues</outputDirectory>
             <useDefaultExcludes>false</useDefaultExcludes>
         </fileSet>
     </fileSets>

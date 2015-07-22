@@ -135,7 +135,8 @@
 							<outputDirectory>${project.build.directory}/change-sets</outputDirectory>
 						</configuration>
 					</execution>
-					<execution>
+					<!--Only needed for retired users, of which we have none right now -->
+					<!--execution>
 						<id>unpack-users</id>
 						<phase>generate-sources</phase>
 						<goals>
@@ -153,7 +154,7 @@
 							</artifactItems>
 							<outputDirectory>${project.build.directory}</outputDirectory>
 						</configuration>
-					</execution>
+					</execution-->
 				</executions>
 			</plugin>
 			<plugin>
@@ -297,7 +298,7 @@
 						<artifactId>maven-dependency-plugin</artifactId>
 						<executions>
 							<execution>
-								<id>unpack-dba</id>
+								<id>extract-dependencies</id>
 								<phase>generate-sources</phase>
 								<goals>
 									<goal>unpack-dependencies</goal>
@@ -307,12 +308,6 @@
 									<outputDirectory>${basedir}</outputDirectory>
 								</configuration>
 							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<executions>
 							<execution>
 								<id>unpack-migration-wf-data</id>
 								<phase>generate-sources</phase>
@@ -385,7 +380,8 @@
 									<goal>initialize-workflow-metadata-relationships</goal>
 								</goals>
 							</execution>
-							<execution>
+							<!-- Don't have any right now -->
+							<!--execution>
 								<id>createRetiredUsers</id>
 								<phase>generate-resources</phase>
 								<goals>
@@ -396,7 +392,7 @@
 										<retiredUserFileName>${project.build.directory}/users/retiredUsers.txt</retiredUserFileName>
 									</retiredUsersFileNames>
 								</configuration>
-							</execution>
+							</execution-->
 							<execution>
 								<id>create-drools-kb base</id>
 								<phase>generate-resources</phase>
@@ -450,10 +446,17 @@
 											</pathConcept>
 											<timeStr>latest</timeStr>
 										</SimpleUniversalAcePosition>
-										<SimpleUniversalAcePosition>
+										<!--SimpleUniversalAcePosition>
 											<pathConcept>
 												<uuid>4d18f7e9-bcc3-3059-888f-5179d41f1f8e</uuid>
 												<description>spanish language path</description>
+											</pathConcept>
+											<timeStr>latest</timeStr>
+										</SimpleUniversalAcePosition-->
+										<SimpleUniversalAcePosition>
+											<pathConcept>
+												<uuid>69f78dfe-44e6-5fc5-ab47-c60cb33190a4</uuid>
+												<description>VHA Extension 2015-05-31</description>
 											</pathConcept>
 											<timeStr>latest</timeStr>
 										</SimpleUniversalAcePosition>

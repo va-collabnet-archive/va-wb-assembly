@@ -9,7 +9,7 @@
 			<includes>
 				<include>*.xls</include>
 			</includes>
-			<outputDirectory>/</outputDirectory>
+			<outputDirectory></outputDirectory>
 		</fileSet>
 	</fileSets>
 	<includeBaseDirectory>false</includeBaseDirectory>

@@ -8,7 +8,7 @@
     <fileSet>
       <useDefaultExcludes>false</useDefaultExcludes>
       <directory>${project.build.directory}/wb-bundle</directory>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory></outputDirectory>
     </fileSet>
   </fileSets>
 </assembly>

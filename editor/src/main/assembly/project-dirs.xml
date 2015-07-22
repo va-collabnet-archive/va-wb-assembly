@@ -6,7 +6,7 @@
             <lineEnding>keep</lineEnding>
             <filtered>false</filtered>
             <useDefaultExcludes>false</useDefaultExcludes>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory></outputDirectory>
             <excludes>
                 
                 <!-- temporarily remove drools qa sync components -->
@@ -16,8 +16,8 @@
                 <exclude>plugins/**/76_launch-qa-manager.bp</exclude>
                 <exclude>plugins/**/77_openQaCaseManager.bp</exclude>   -->
                 
-                <!-- exclude QA pre-commit rules -->
-                <exclude>**/org.ihtsdo.rules.tasks.TestUsingPreCommitContext.task</exclude>
+                <!-- Exclude precommit QA rules -->
+                <exclude>plugins/precommit/org.ihtsdo.rules.tasks.TestUsingPreCommitContext.task</exclude>
 
   
                 
@@ -75,7 +75,6 @@
                 <exclude>**/8.*.bp</exclude>
                 <exclude>plugins/**/desc/*.bp</exclude>
                 <exclude>plugins/**/desc/</exclude>
-                <exclude>plugins/**/contains/*contains-desc.bp</exclude>
                 <!-- menu help bps -->
                 <exclude>**/90_GotoNHS_Nice.bp</exclude>             
                 <exclude>**/20_Open_HTML_Guidebook.bp</exclude>
@@ -107,8 +106,6 @@
                 <!--exclude these per alejandro -->
                 <exclude>plugins/**/org.ihtsdo.translation.tasks.commit.TestForHomograph.task</exclude>
                 <exclude>plugins/**/org.ihtsdo.translation.tasks.TestRejectRelsAndAttributesChanges.task</exclude> 
-                <!-- disable pre-commit QA -->
-                <exclude>plugins/precommit/</exclude> 
             </excludes>
             <fileMode>0644</fileMode>
             <directoryMode>0755</directoryMode>
@@ -119,7 +116,7 @@
             <lineEnding>keep</lineEnding>
             <filtered>false</filtered>
             <useDefaultExcludes>true</useDefaultExcludes>
-            <outputDirectory>/plugins/migration-wf</outputDirectory>
+            <outputDirectory>plugins/migration-wf</outputDirectory>
             <includes>
                 <include>AdvanceWorkflow.bp</include>
             </includes>

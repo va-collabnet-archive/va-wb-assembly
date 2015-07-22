@@ -93,7 +93,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <build>
-                <directory>/Volumes/ramdisk/maven-targets/gov.va.wb-batch-qa-runner/</directory>
+                <directory>/Volumes/ramdisk/maven-targets/org.ihtsdo-batch-qa-runner/</directory>
             </build>
         </profile>
         <profile>
@@ -254,8 +254,8 @@
                                     <dateTimeStr>${test.time}</dateTimeStr>
                                     <includeInactiveConcepts>true</includeInactiveConcepts>
                                     <enableDbWriteback>true</enableDbWriteback>
-                                    <reportChanges>classifier_changes</reportChanges>
-                                    <reportEquivalences>classifier_equivalences</reportEquivalences>
+                                    <!--  <reportChanges>classifier_changes</reportChanges>
+                                    <reportEquivalences>classifier_equivalences</reportEquivalences> -->
                                 </configuration>
                             </execution>
                             <execution>
@@ -289,7 +289,7 @@
                                 <configuration>
                                     <database_uuid>${database.uuid}</database_uuid>
                                     <test_path_uuid>${path.to.test}</test_path_uuid>
-                                    <execution_name>${projectName}</execution_name>
+                                    <execution_name>${appName}</execution_name>
                                     <test_time>${test.time}</test_time>
                                     <context_uuid>${context.uuid}</context_uuid>
                                     <pkgName>${pkg.name}</pkgName>
@@ -302,12 +302,24 @@
                                 </configuration>
                             </execution>
 
-                            <!-- OPTIONAL: upload results to central QA server <execution> <id>import-results</id> 
-                                <phase>compile</phase> <goals> <goal>upload-to-qa-db</goal> </goals> <configuration> 
-                                <executionDetailsOutputStr>executionXmlOutput.txt</executionDetailsOutputStr> 
-                                <rulesOutputStr>rulesOutput.txt</rulesOutputStr> <findingsOutputStr>findingsOutput.txt</findingsOutputStr> 
-                                <url>${jdbc.url}</url> <username>${jdbc.user}</username> <password>${jdbc.pass}</password> 
-                                </configuration> </execution> -->
+                            <!-- OPTIONAL: upload results to central QA server  -->
+                            
+                            <!--<execution>-->
+                                <!--<id>import-results</id>-->
+                                <!--<phase>compile</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>upload-to-qa-db</goal>-->
+                                <!--</goals>-->
+                                <!--<configuration>-->
+                                    <!--<executionDetailsOutputStr>executionXmlOutput.txt</executionDetailsOutputStr>-->
+                                    <!--<rulesOutputStr>rulesOutput.txt</rulesOutputStr>-->
+                                    <!--<findingsOutputStr>findingsOutput.txt</findingsOutputStr>-->
+                                    <!--<url>${jdbc.url}</url>-->
+                                    <!--<username>${jdbc.user}</username>-->
+                                    <!--<password>${jdbc.pass}</password>-->
+                                <!--</configuration>-->
+                            <!--</execution>-->
+                            
                             <execution>
                                 <id>vodb-close2</id>
                                 <phase>process-resources</phase>

@@ -57,12 +57,6 @@
             <type>zip</type>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>sampleProcesses</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
             <groupId>${workflowResourcesGroup}</groupId>
             <artifactId>${workflowResourcesArtifactId}</artifactId>
             <version>${workflowResourcesVersion}</version>
@@ -113,23 +107,6 @@
             <groupId>jgraphx</groupId>
             <artifactId>jgraphx-examples</artifactId>
             <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <!--
-         A dependency required to use the jini/jehri dynamic provider
-         security model
-       -->
-            <groupId>org.dwfa.jini</groupId>
-            <artifactId>jsk-policy</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.dwfa.jini</groupId>
-            <artifactId>start</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.dwfa.jini</groupId>
-            <artifactId>jsk-dl</artifactId>
         </dependency>
         <dependency>
             <groupId>org.ihtsdo</groupId>
@@ -276,13 +253,28 @@
                         </goals>
                         <configuration>
                             <includeTypes>zip</includeTypes>
-                            <useDefaultExcludes>false</useDefaultExcludes>
-                            <excludes>**/synchronize.bp</excludes>
-                            <excludeArtifactIds>${userDataArtifactId}</excludeArtifactIds>
+                            <excludeArtifactIds>${userDataArtifactId}, wb-ide-user-bp</excludeArtifactIds>
+                            <!-- Maven is broken, and if you provide an "excludes" it also skips things like .svn - so need to do the bp ones in a different execution. -->
                             <excludeTransitive>true</excludeTransitive>
                             <!-- alternative if above is too aggressive
-                  <includeArtifactIds>profiles,queues,documentation,project-bdb,wb-ide-admin-bp,wb-ide-user-bp</includeArtifactIds>
-              -->
+                            <includeArtifactIds>profiles,queues,documentation,project-bdb,wb-ide-admin-bp,wb-ide-user-bp</includeArtifactIds>-->
+                            <outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-filtered-bp</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeTypes>zip</includeTypes>
+                            <includeArtifactIds>wb-ide-user-bp</includeArtifactIds>
+                            <!-- Maven is broken, and if you provide an "excludes" it also skips things like .svn - so need to do the bp ones in a different execution. -->
+                            <excludeTransitive>true</excludeTransitive>
+                            <excludes>**/synchronize.bp</excludes> 
+                            <!-- Maven is broken, and if you provide an "excludes" it also skips things like .svn - so need to do the bp ones in a different execution. -->
+                            <!-- https://issues.apache.org/jira/browse/MDEP-496 -->
                             <outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
                         </configuration>
                     </execution>
@@ -395,99 +387,6 @@
                 <groupId>org.ihtsdo</groupId>
                 <artifactId>wb-mojo</artifactId>
                 <executions>
-                    <execution>
-                        <id>process-config</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>process-config</goal>
-                        </goals>
-                        <configuration>
-                            <specs>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/dwfa/resources/core/config.*config$</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                    <substitutions>
-                                        <substutionSpec>
-                                            <patternStr>"org.dwfa.discovery"</patternStr>
-                                            <replacementStr>org.dwfa.jini.ConfigUtil.getUniqueJvmGroup()</replacementStr>
-                                            <nullActionStr>REPLACE_LITERAL</nullActionStr>
-                                        </substutionSpec>
-                                    </substitutions>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/jehri/config.*config$</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                    <substitutions>
-                                        <substutionSpec>
-                                            <propertyName>org.dwfa.configname</propertyName>
-                                            <patternStr>UniqueConfig</patternStr>
-                                            <replacementStr />
-                                            <nullActionStr>EMPTY_STRING</nullActionStr>
-                                        </substutionSpec>
-                                        <substutionSpec>
-                                            <patternStr>"org.dwfa.discovery"</patternStr>
-                                            <replacementStr>org.dwfa.jini.ConfigUtil.getUniqueJvmGroup()</replacementStr>
-                                            <nullActionStr>REPLACE_LITERAL</nullActionStr>
-                                        </substutionSpec>
-                                    </substitutions>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/dwfa/ace/config.*config$</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                    <substitutions>
-                                        <substutionSpec>
-                                            <propertyName>org.dwfa.configname</propertyName>
-                                            <patternStr>UniqueConfig</patternStr>
-                                            <replacementStr />
-                                            <nullActionStr>EMPTY_STRING</nullActionStr>
-                                        </substutionSpec>
-                                        <substutionSpec>
-                                            <patternStr>"org.dwfa.discovery"</patternStr>
-                                            <replacementStr>org.dwfa.jini.ConfigUtil.getUniqueJvmGroup()</replacementStr>
-                                            <nullActionStr>REPLACE_LITERAL</nullActionStr>
-                                        </substutionSpec>
-                                    </substitutions>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/ihtsdo/workflow/*.*txt</filePatternStr>
-                                    <destDir>generated-resources/workflow</destDir>
-                                    <substitutions>
-                                        <substutionSpec>
-                                            <propertyName>org.dwfa.configname</propertyName>
-                                            <patternStr>UniqueConfig</patternStr>
-                                            <replacementStr />
-                                            <nullActionStr>EMPTY_STRING</nullActionStr>
-                                        </substutionSpec>
-                                        <substutionSpec>
-                                            <patternStr>"org.dwfa.discovery"</patternStr>
-                                            <replacementStr>org.dwfa.jini.ConfigUtil.getUniqueJvmGroup()</replacementStr>
-                                            <nullActionStr>REPLACE_LITERAL</nullActionStr>
-                                        </substutionSpec>
-                                    </substitutions> 
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/dwfa/ace/config.*policy</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/jehri/config.*policy</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/dwfa/resources/core/config.*policy</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/dwfa/resources/core/config.*properties</filePatternStr>
-                                    <destDir>generated-resources/config</destDir>
-                                </extractAndProcessSpec>
-                                <extractAndProcessSpec>
-                                    <filePatternStr>^org/dwfa/resources/core/icon.*</filePatternStr>
-                                    <destDir>generated-resources/config/icon</destDir>
-                                </extractAndProcessSpec>
-                            </specs>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>export-beans</id>
                         <phase>generate-sources</phase>
@@ -695,7 +594,7 @@
                                         </property>
                                         <property>
                                             <name>bundle.short_name</name>
-                                            <value>"VA Terminology Workbench"</value>
+                                            <value>"${appName}"</value>
                                         </property>
                                         <property>
                                             <name>media.dir</name>
@@ -882,7 +781,7 @@
                                         </artifactItem>
                                         <artifactItem>
                                             <groupId>org.ihtsdo</groupId>
-                                            <artifactId>tk-refset</artifactId>
+                                            <artifactId>tk-query</artifactId>
                                             <version>${org.ihtsdo.wb-toolkit.version}</version>
                                         </artifactItem>
                                         <artifactItem>

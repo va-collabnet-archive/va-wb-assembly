@@ -7,7 +7,7 @@
   <fileSets>
     <fileSet>
       <directory>${project.build.directory}/generated-resources/iec</directory>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory></outputDirectory>
     </fileSet>
   </fileSets>
 </assembly>

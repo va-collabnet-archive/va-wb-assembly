@@ -5,13 +5,13 @@
   </formats>
   <fileSets>
     <fileSet>
-      <directory>src/main/profiles</directory>
-      <outputDirectory>/profiles</outputDirectory>
+      <directory>${project.build.directory}/profiles</directory>
+      <outputDirectory>profiles</outputDirectory>
       <useDefaultExcludes>false</useDefaultExcludes>
     </fileSet>
     <fileSet>
       <directory>src/main/arena</directory>
-      <outputDirectory>/arena</outputDirectory>
+      <outputDirectory>arena</outputDirectory>
       <includes>
         <include>**/*.mxe</include>
       </includes>
