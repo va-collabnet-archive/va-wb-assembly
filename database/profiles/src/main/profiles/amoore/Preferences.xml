@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+<root type="user">
+<map/>
+<node name="gov.va.wb;editor;4.0-SNAPSHOT;amoore">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="queue">
+<map/>
+<node name="QueueList">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_LIST" value="3"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueuePreferences"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueuePreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="DISPLAY_NAME" value="amoore.inbox"/>
+<entry key="ID" value="44472139-8476-426b-88a3-d4bb946656b1"/>
+<entry key="QUEUE_DIRECTORY" value="queues/amoore/amoore.inbox"/>
+<entry key="QUEUE_INSTANCE_PROPERTIES_LIST" value="2"/>
+<entry key="READ_INSTEAD_OF_TAKE" value="false"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueType"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueType">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_TYPE" value="INBOX"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueAddress"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueAddress">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_ADDRESS" value="amoore.inbox"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueuePreferences"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueuePreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="DISPLAY_NAME" value="amoore.todo"/>
+<entry key="ID" value="d5ba918e-ea24-4f4a-ade3-1c7d45f67057"/>
+<entry key="QUEUE_DIRECTORY" value="queues/amoore/amoore.todo"/>
+<entry key="QUEUE_INSTANCE_PROPERTIES_LIST" value="2"/>
+<entry key="READ_INSTEAD_OF_TAKE" value="false"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueType"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueType">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_TYPE" value="INBOX"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueAddress"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueAddress">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_ADDRESS" value="amoore.todo"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="2">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueuePreferences"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueuePreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="DISPLAY_NAME" value="amoore.outbox"/>
+<entry key="ID" value="274a7790-d3b1-47d3-8f03-45b9f53ab169"/>
+<entry key="QUEUE_DIRECTORY" value="queues/amoore/amoore.outbox"/>
+<entry key="QUEUE_INSTANCE_PROPERTIES_LIST" value="2"/>
+<entry key="READ_INSTEAD_OF_TAKE" value="false"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueType"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueType">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_TYPE" value="OUTBOX"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueAddress"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueAddress">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_ADDRESS" value="amoore.outbox"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</root>
+</preferences>

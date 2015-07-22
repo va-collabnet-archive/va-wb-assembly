@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+<root type="user">
+<map/>
+<node name="gov.va.wb;editor;4.0-SNAPSHOT;kcampbell">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="queue">
+<map/>
+<node name="QueueList">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_LIST" value="3"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueuePreferences"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueuePreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="DISPLAY_NAME" value="kcampbell.inbox"/>
+<entry key="ID" value="937b9e5b-db0f-4cf9-b87d-fb37fa8986e4"/>
+<entry key="QUEUE_DIRECTORY" value="queues/kcampbell/kcampbell.inbox"/>
+<entry key="QUEUE_INSTANCE_PROPERTIES_LIST" value="2"/>
+<entry key="READ_INSTEAD_OF_TAKE" value="false"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueType"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueType">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_TYPE" value="INBOX"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueAddress"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueAddress">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_ADDRESS" value="kcampbell.inbox"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueuePreferences"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueuePreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="DISPLAY_NAME" value="kcampbell.todo"/>
+<entry key="ID" value="c85c2583-f4ed-40a6-865e-36f83853f667"/>
+<entry key="QUEUE_DIRECTORY" value="queues/kcampbell/kcampbell.todo"/>
+<entry key="QUEUE_INSTANCE_PROPERTIES_LIST" value="2"/>
+<entry key="READ_INSTEAD_OF_TAKE" value="false"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueType"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueType">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_TYPE" value="INBOX"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueAddress"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueAddress">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_ADDRESS" value="kcampbell.todo"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="2">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueuePreferences"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueuePreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="DISPLAY_NAME" value="kcampbell.outbox"/>
+<entry key="ID" value="cd9e56c0-57d6-416a-a234-fb91bc3831b7"/>
+<entry key="QUEUE_DIRECTORY" value="queues/kcampbell/kcampbell.outbox"/>
+<entry key="QUEUE_INSTANCE_PROPERTIES_LIST" value="2"/>
+<entry key="READ_INSTEAD_OF_TAKE" value="false"/>
+</map>
+<node name="0">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueType"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueType">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_TYPE" value="OUTBOX"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node name="1">
+<map/>
+<node name="org">
+<map/>
+<node name="ihtsdo">
+<map/>
+<node name="ttk">
+<map/>
+<node name="preferences">
+<map/>
+<node name="EnumBasedPreferences">
+<map/>
+<node name="Fields">
+<map>
+<entry key="CLASS_NAME" value="org.ihtsdo.ttk.queue.QueueAddress"/>
+</map>
+</node>
+</node>
+</node>
+<node name="queue">
+<map/>
+<node name="QueueAddress">
+<map/>
+<node name="Fields">
+<map>
+<entry key="QUEUE_ADDRESS" value="kcampbell.outbox"/>
+</map>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</root>
+</preferences>
