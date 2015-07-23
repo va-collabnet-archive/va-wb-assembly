@@ -18,14 +18,14 @@
 		<bdbData.groupId>gov.va.wb</bdbData.groupId>
 		<bdbData.artifactId>project-bdb</bdbData.artifactId>
 		<bdbData.version>4.0-SNAPSHOT</bdbData.version>
-		<!--svnDeployPath>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod-rf2-reports</svnDeployPath-->
+		<!--svnDeployPath>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/branches/4.0-prod-rf2-reports</svnDeployPath-->
 	</properties>
 	
-	<!--scm>
-		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod/rf2-validator-config</connection>
-		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/3.4-prod/rf2-validator-config</developerConnection>
-		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-jif-wb-assembly/branches/3.4-prod/rf2-validator-config?root=va-jif-wb-bundle&amp;system=exsy1002</url>
-	</scm-->
+	<scm>
+		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/trunk/rf2-validator-config</connection>
+		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/trunk/rf2-validator-config</developerConnection>
+		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-wb-assembly-4/trunk/rf2-validator-config?root=va-wb-bundle&amp;system=exsy1002</url>
+	</scm>
 
 	<build>
 		<plugins>
