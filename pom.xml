@@ -111,7 +111,7 @@
 
 		<!-- IHTSDO versions -->
 		<org.ihtsdo.user.docs>1.2</org.ihtsdo.user.docs>
-		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.30-SNAPSHOT</org.ihtsdo.wb-toolkit.version>
+		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.30</org.ihtsdo.wb-toolkit.version>
 		<org.ihtsdo.wb-icons.version>1.0.12</org.ihtsdo.wb-icons.version>
 		<org.ihtsdo.resources.version>1.7</org.ihtsdo.resources.version>
 		<org.ihtsdo.user.bp.version>1.36</org.ihtsdo.user.bp.version>
