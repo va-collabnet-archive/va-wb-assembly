@@ -33,26 +33,26 @@
 		<previousReleaseEffectiveTime />
 		<releaseName>{project.name}</releaseName>
 		<!-- NO SPACES in this variable - it breaks install4j!!! -->
-		<installerName>IHTSDO-${target}-Version_4.0_Production-editor</installerName>
+		<installerName>IHTSDO-${target}-Version_4.1_Production-editor</installerName>
 
 		<!-- per project customization -->
 		<isVaProject>false</isVaProject>
 		<aboutBoxReleaseEdition>VA Edition</aboutBoxReleaseEdition>
-		<aboutBoxReleaseVersion>Version 4.0 - Trunk</aboutBoxReleaseVersion>
+		<aboutBoxReleaseVersion>Version 4.1 - Trunk</aboutBoxReleaseVersion>
 		<!-- 
-		<aboutBoxReleaseVersion>Version 4.0 - UAT Testing</aboutBoxReleaseVersion>
-		<aboutBoxReleaseVersion>Version 4.0 - Production</aboutBoxReleaseVersion>
+		<aboutBoxReleaseVersion>Version 4.1 - UAT Testing</aboutBoxReleaseVersion>
+		<aboutBoxReleaseVersion>Version 4.1 - Production</aboutBoxReleaseVersion>
 		-->
 
 		<appName>VA Terminology Workbench</appName>
 		<projectName>VA Terminology Workbench</projectName>
 		<baselineDataGroup>gov.va.wb</baselineDataGroup>
 		<baselineDataArtifactId>va-wb-baseline</baselineDataArtifactId>
-		<baselineDataVersion>4.0-SNAPSHOT</baselineDataVersion>
+		<baselineDataVersion>4.1-SNAPSHOT</baselineDataVersion>
 		<baselineDataClassifier>db</baselineDataClassifier>
 		<userDataGroup>gov.va.wb</userDataGroup>
 		<userDataArtifactId>va-wb-users</userDataArtifactId>
-		<userDataVersion>4.0</userDataVersion>
+		<userDataVersion>4.1-SNAPSHOT</userDataVersion>
 		<qaRulesGroup>org.ihtsdo.qa</qaRulesGroup>
 		<qaRulesArtifactId>ihtsdo-base-rules-package</qaRulesArtifactId>
 		<qaRulesVersion>0.0.16</qaRulesVersion>
@@ -64,11 +64,11 @@
 		<publicationEffectiveDate>2015.07.31 00:00:00</publicationEffectiveDate>
 		<projectRulesGroup>gov.va.wb</projectRulesGroup>
 		<projectRulesArtifactId>va-wb-rules</projectRulesArtifactId>
-		<projectRulesVersion>4.0</projectRulesVersion>
+		<projectRulesVersion>4.1-SNAPSHOT</projectRulesVersion>
 		<collabnetProjectName>interagency_program_office</collabnetProjectName>
 		<workflowResourcesGroup>gov.va.wb</workflowResourcesGroup>
 		<workflowResourcesArtifactId>va-wb-workflow</workflowResourcesArtifactId>
-		<workflowResourcesVersion>4.0</workflowResourcesVersion>
+		<workflowResourcesVersion>4.1-SNAPSHOT</workflowResourcesVersion>
 		<siteDeployUrl>svn:https://TODO-siteDeploy</siteDeployUrl>
 		<!-- <siteDeployUrl>svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/4.0-prod-siteDeploy</siteDeployUrl> -->
 
