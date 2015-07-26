@@ -10,11 +10,6 @@ In the WB, go to  Project Manager -> Maintenance Worklist (bottom of the Project
 
 Synchronize
 
-From elsewhere, copy the "Changesets for WF Cleanup hack\WF_Work" folder into the database\profiles\src\main\profiles\ folder 
-(creating the WF_Work folder there)
-
-Push this change up.
-
 Rebuild the installation package (which will process all of the changesets, and build them into the DB)
 
 Test - hopefully - the build is good at this point.
