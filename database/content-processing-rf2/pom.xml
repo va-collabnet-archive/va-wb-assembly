@@ -295,6 +295,18 @@
                                     </conceptsToSkip>
                                 </configuration>
                             </execution>
+                            <execution>
+                                <id>Export-USCRS-File</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>export-USCRS</goal>
+                                </goals>
+                                <configuration>
+									<previousReleaseDate>${previousReleaseDate}</previousReleaseDate>
+                                    <namespace>${projectIdNamespace}</namespace>
+									<viewPathConceptSpecFsn>${projectReleaseCandidatePathFsn}</viewPathConceptSpecFsn>
+                                </configuration>
+                            </execution>
                         </executions>
                     </plugin>
                     <plugin>
@@ -315,6 +327,7 @@
                                         <descriptor>src/main/assembly/map.xml</descriptor>
                                         <descriptor>src/main/assembly/changesets.xml</descriptor>
                                         <descriptor>src/main/assembly/refset.xml</descriptor>
+                                        <descriptor>src/main/assembly/uscrs-artifact.xml</descriptor>                                      
                                     </descriptors>
                                     <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
                                 </configuration>
