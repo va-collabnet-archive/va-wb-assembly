@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>gov.va.wb</groupId>
 		<artifactId>database</artifactId>
-		<version>4.0-SNAPSHOT</version>
+		<version>4.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>project-bdb</artifactId>
@@ -455,8 +455,8 @@
 										</SimpleUniversalAcePosition-->
 										<SimpleUniversalAcePosition>
 											<pathConcept>
-												<uuid>69f78dfe-44e6-5fc5-ab47-c60cb33190a4</uuid>
-												<description>VHA Extension 2015-05-31</description>
+												<uuid>d0175e96-ef86-5c3f-a9ed-e14993b478e9</uuid>
+												<description>VHA Extension</description>
 											</pathConcept>
 											<timeStr>latest</timeStr>
 										</SimpleUniversalAcePosition>
