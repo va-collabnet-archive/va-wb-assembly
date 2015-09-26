@@ -6,7 +6,7 @@
 	<groupId>gov.va.wb</groupId>
 	<artifactId>rf2-validator-config</artifactId>
 	<name>rf2-validator-config</name>
-	<version>4.0-rf2-validator-SNAPSHOT</version>
+	<version>4.1-rf2-validator-SNAPSHOT</version>
 	
 	<packaging>pom</packaging>
 
