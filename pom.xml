@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>gov.va.wb</groupId>
 	<artifactId>va-wb-assembly</artifactId>
-	<version>4.0-SNAPSHOT</version>
+	<version>4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<inceptionYear>2013</inceptionYear>
@@ -111,7 +111,7 @@
 
 		<!-- IHTSDO versions -->
 		<org.ihtsdo.user.docs>1.2</org.ihtsdo.user.docs>
-		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.30</org.ihtsdo.wb-toolkit.version>
+		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.33-SNAPSHOT</org.ihtsdo.wb-toolkit.version>
 		<org.ihtsdo.wb-icons.version>1.0.12</org.ihtsdo.wb-icons.version>
 		<org.ihtsdo.resources.version>1.7</org.ihtsdo.resources.version>
 		<org.ihtsdo.user.bp.version>1.36</org.ihtsdo.user.bp.version>
@@ -156,7 +156,7 @@
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpcore</artifactId>
-				<version>4.0.1</version>
+				<version>4.1.1</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.axis2</groupId>
@@ -567,8 +567,8 @@
 		</profile>
 	</profiles>
 	<modules>
-		<module>database</module>
+ 		<module>database</module>
 		<module>editor</module>
-		<module>batch-qa-runner</module>
+	 	<module>batch-qa-runner</module> 
 	</modules>
 </project>
