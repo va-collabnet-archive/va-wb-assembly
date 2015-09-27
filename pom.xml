@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>gov.va.wb</groupId>
 	<artifactId>va-wb-assembly</artifactId>
-	<version>4.1-prod-SNAPSHOT</version>
+	<version>4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<inceptionYear>2013</inceptionYear>
@@ -16,9 +16,9 @@
 	<name>VA Terminology Workbench :: PA</name>
 	<description>VA Terminology Workbench Project Assembly</description>
 	<scm>
-		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/branches/4.1-prod</connection>
-		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/branches/4.1-prod</developerConnection>
-		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-wb-assembly-4/branches/4.1-prod?root=va-wb-bundle-4&amp;system=exsy1002</url>
+		<connection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/trunk</connection>
+		<developerConnection>scm:svn:https://csfe.aceworkspace.net/svn/repos/va-wb-bundle-4/va-wb-assembly/trunk</developerConnection>
+		<url>https://csfe.aceworkspace.net/integration/viewvc/viewvc.cgi/va-wb-assembly-4/trunk/?root=va-wb-bundle-4&amp;system=exsy1002</url>
 	</scm>
 	<properties>
 		<!-- Used to reference archetype which created this project. -->

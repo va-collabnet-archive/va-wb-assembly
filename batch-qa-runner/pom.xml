@@ -4,7 +4,7 @@
     <parent>
         <groupId>gov.va.wb</groupId>
         <artifactId>va-wb-assembly</artifactId>
-        <version>4.1-prod-SNAPSHOT</version>
+        <version>4.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>batch-qa-runner</artifactId>
