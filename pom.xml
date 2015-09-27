@@ -48,11 +48,11 @@
 		<projectName>VA Terminology Workbench</projectName>
 		<baselineDataGroup>gov.va.wb</baselineDataGroup>
 		<baselineDataArtifactId>va-wb-baseline</baselineDataArtifactId>
-		<baselineDataVersion>4.1-SNAPSHOT</baselineDataVersion>
+		<baselineDataVersion>4.1</baselineDataVersion>
 		<baselineDataClassifier>db</baselineDataClassifier>
 		<userDataGroup>gov.va.wb</userDataGroup>
 		<userDataArtifactId>va-wb-users</userDataArtifactId>
-		<userDataVersion>4.1-SNAPSHOT</userDataVersion>
+		<userDataVersion>4.1</userDataVersion>
 		<qaRulesGroup>org.ihtsdo.qa</qaRulesGroup>
 		<qaRulesArtifactId>ihtsdo-base-rules-package</qaRulesArtifactId>
 		<qaRulesVersion>0.0.16</qaRulesVersion>
@@ -64,11 +64,11 @@
 		<publicationEffectiveDate>2015.07.31 00:00:00</publicationEffectiveDate>
 		<projectRulesGroup>gov.va.wb</projectRulesGroup>
 		<projectRulesArtifactId>va-wb-rules</projectRulesArtifactId>
-		<projectRulesVersion>4.1-SNAPSHOT</projectRulesVersion>
+		<projectRulesVersion>4.1</projectRulesVersion>
 		<collabnetProjectName>interagency_program_office</collabnetProjectName>
 		<workflowResourcesGroup>gov.va.wb</workflowResourcesGroup>
 		<workflowResourcesArtifactId>va-wb-workflow</workflowResourcesArtifactId>
-		<workflowResourcesVersion>4.1-SNAPSHOT</workflowResourcesVersion>
+		<workflowResourcesVersion>4.1</workflowResourcesVersion>
 		<siteDeployUrl>svn:https://TODO-siteDeploy</siteDeployUrl>
 		<!-- <siteDeployUrl>svn:https://csfe.aceworkspace.net/svn/repos/va-jif-wb-bundle/va-jif-wb-assembly/branches/4.0-prod-siteDeploy</siteDeployUrl> -->
 
